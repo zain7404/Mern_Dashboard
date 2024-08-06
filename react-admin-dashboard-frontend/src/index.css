@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "sofia pro";
+  src: url("./assests/font-family/SofiaProRegular.otf") format("opentype");
+}
+
+/* Track */
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "sofia pro" !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "sofia pro" !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7a7f9d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #21295c;
+}
+
+/* Handle on Hover */
+::-webkit-scrollbar-track:hover {
+  background: #21295c;
+}
