@@ -154,9 +154,47 @@ function Sidebar({
                     </Typography>
                   );
                 }
-                const lcText = text.toLocaleLowerCase(); 
-                    
-
+                const lcText = text.toLocaleLowerCase();
+                return (
+                  <ListItem key={text} disablePadding>
+                    <ListItemButton
+                      onClick={() => {
+                        navigate(`/${lcText}`);
+                        setActive(lcText);
+                      }}
+                      sx={{
+                        backgroundColor:
+                          active === lcText
+                            ? theme.palette.secondary[300]
+                            : "transparent",
+                        color:
+                          active === lcText
+                            ? theme.palette.primary[600]
+                            : theme.palette.secondary[100],
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          ml: "2rem",
+                          color:
+                            active === lcText
+                              ? theme.palette.primary[600]
+                              : theme.palette.secondary[200],
+                        }}
+                      >
+                        {icon}
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                      {active === lcText && (
+                        <ChevronRightOutlined
+                          sx={{
+                            ml: "auto",
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                );
               })}
             </List>
           </Box>
