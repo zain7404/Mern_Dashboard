@@ -11,6 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import { useGetProductsQuery } from "state/api";
 import Header from "components/Header";
@@ -86,6 +87,8 @@ const Product = ({
 };
 
 const Products = () => {
+  const theme = useTheme();
+
   const { data, isLoading } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   console.log("🚀 ~ Products ~ data:", data);
@@ -131,7 +134,20 @@ const Products = () => {
           )}
         </Box>
       ) : (
-        <>Loading...</>
+        <CircularProgress
+          disableShrink
+          width=""
+          sx={{
+            position: "absolute",
+            top: "45%",
+            left: "50%",
+
+            color: theme.palette.primary.main,
+
+            width: "100px!important",
+            height: "100px!important",
+          }}
+        />
       )}
     </Box>
   );
