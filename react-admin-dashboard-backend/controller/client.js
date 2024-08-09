@@ -55,7 +55,7 @@ export const getTransactions = async (req, res) => {
       ],
     })
       .sort(sortFormatted)
-      .skip(page * pageSize)
+      .skip(page * pageSize) // No need to modify here, as 0-based works as expected
       .limit(pageSize);
 
     const total = await Transaction.countDocuments({
