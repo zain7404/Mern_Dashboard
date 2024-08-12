@@ -59,9 +59,7 @@ export const getTransactions = async (req, res) => {
       .skip(page * pageSize) // No need to modify here, as 0-based works as expected
       .limit(pageSize);
 
-    const total = await Transaction.countDocuments({
-      name: { $regex: search, $options: "i" },
-    });
+    const total = await Transaction.countDocuments();
 
     res.status(200).json({
       transactions,
