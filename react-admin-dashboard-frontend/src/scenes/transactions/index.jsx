@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { useGetTransactionsQuery } from "state/api";
 import Header from "components/Header";
@@ -8,7 +8,6 @@ import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 const Transactions = () => {
   const theme = useTheme();
 
-  // values to be sent to the backend
   const [page, setPage] = useState(0);
 
   const [pageSize, setPageSize] = useState(20);
