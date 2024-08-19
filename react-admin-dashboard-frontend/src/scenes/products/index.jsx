@@ -142,7 +142,7 @@ const Products = () => {
             top: "45%",
             left: "50%",
 
-            color: theme.palette.primary.main,
+            color: theme.palette.secondary[400],
 
             width: "100px!important",
             height: "100px!important",
